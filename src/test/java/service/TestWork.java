@@ -55,5 +55,20 @@ public class TestWork {
                 .post("https://qyapi.weixin.qq.com/cgi-bin/department/create")
         .then().log().all()
                 .body("errcode",equalTo(0));
+
+                //todo：需要用List接口校验，但是如果编写List的请求，会导致代码冗余会带来维护问题，所以引入PO思想
     }
+
+    @Test
+    /*获取部门列表*/
+    public void departList(){
+        given()
+                .queryParam("access_token",token)
+                .queryParam("id",parentDepartID)
+        .when().log().all()
+                .get("https://qyapi.weixin.qq.com/cgi-bin/department/list")
+        .then().log().all()
+                .body("errcode",equalTo(0));
+    }
+
 }

@@ -1,4 +1,4 @@
-package service;
+package service.department;
 
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.BeforeAll;
@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.*;
 import static io.restassured.matcher.RestAssuredMatchers.*;
 import static org.hamcrest.Matchers.*;
 
-public class TestWork {
+public class TestClassictDepart {
     static String token;
     /*父部门id*/
     static int parentDepartID=4;
